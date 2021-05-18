@@ -23,7 +23,12 @@ class PersonaTest {
 
 	@Test
 	void testSetDni() {
-		fail("Not yet implemented");
+		try {
+			p.setDni("123456789Z");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test

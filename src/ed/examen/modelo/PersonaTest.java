@@ -27,8 +27,19 @@ class PersonaTest {
 			p.setDni("123456789Z");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			fail("excepcion al modificar un dni correcto");
 		}
+		assertEquals("123456789Z", p.getDni());
+		
+		boolean excepcionlanzada=false;
+		
+		try {
+			p.setDni("123456789");
+		} catch (Exception e) {
+			excepcionlanzada=true;
+			
+		}
+		assertTrue(excepcionlanzada);
 	}
 
 	@Test

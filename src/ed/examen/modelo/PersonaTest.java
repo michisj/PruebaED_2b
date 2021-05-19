@@ -10,7 +10,9 @@ class PersonaTest {
 
 	@Test
 	void testPersonaStringStringString() {
-		fail("Not yet implemented");
+		assertEquals("123456789", p.getDni());
+		assertEquals("Miguel", p.getNombre());
+		assertEquals("San Juan", p.getApellido1());
 	}
 
 	@Test
@@ -62,6 +64,7 @@ class PersonaTest {
 
 	@Test
 	void testGetApellido1() {
+		p.setApellido1("San Juan");
 		String valorEsperado="San Juan";
 		String valorDevuelto= p.getApellido1();
 		

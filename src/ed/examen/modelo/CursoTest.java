@@ -65,14 +65,5 @@ class CursoTest {
 		assertEquals(0, curso.numeroAlumnos());
 	}
 
-	@Test
-	void testNumeroAlumnos() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testMostrarTodos() {
-		fail("Not yet implemented");
-	}
 
 }

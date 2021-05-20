@@ -9,7 +9,34 @@ class CursoTest {
 	private Curso curso = new Curso();
 	@Test
 	void testEliminarAlumno() {
-		fail("Not yet implemented");
+		boolean exceptionLanzada=false;
+		try {
+			curso.eliminarAlumno("1");
+		} catch (Exception e) {
+			exceptionLanzada=true;
+		}
+		assertTrue(exceptionLanzada);
+		
+		
+		try {
+			int alumnosAntes = curso.numeroAlumnos();
+			curso.eliminarAlumno("123456789");
+			int alumnosDespues = curso.numeroAlumnos();
+			assertEquals(alumnosAntes, alumnosDespues);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		curso.aniadirAlumno(new Persona ("123456789", "Miguel", "San Juan"));
+		try {
+			int alumnosAntes = curso.numeroAlumnos();
+			curso.eliminarAlumno("123456789");
+			int alumnosDespues = curso.numeroAlumnos();
+			assertEquals(alumnosAntes-1, alumnosDespues);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	@Test
